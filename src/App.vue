@@ -3,6 +3,7 @@
   import mainBody from './components/mainBody.vue'
   import blueIcons from './components/blueIcons.vue'
   import footerLists from './components/footerLists.vue'
+  import footerSignUp from './components/footerSignUp.vue'
 
   export default{
     components: {
@@ -10,6 +11,7 @@
       mainBody,
       blueIcons,
       footerLists,
+      footerSignUp,
     }
   }
 </script>
@@ -23,6 +25,7 @@
   <mainBody/>
   <blueIcons/>
   <footerLists/>
+  <footerSignUp/>
   
 
   
