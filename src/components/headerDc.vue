@@ -1,6 +1,57 @@
 <script>
     export default {
-        name: "headerDc"
+        name: "headerDc",
+        data() {
+            return {
+            arrayNavLinks: [
+                {
+                    name: 'characters',
+                    status: false
+                },
+                {
+                    name: 'comics',
+                    status: true
+                },
+                {
+                    name: 'movies',
+                    status: false
+                },
+                {
+                    name: 'tv',
+                    status: false
+                },
+                {
+                    name: 'games',
+                    status: false
+                },
+                {
+                    name: 'collectibles',
+                    status: false
+                },
+                {
+                    name: 'videos',
+                    status: false
+                },
+                {
+                    name: 'fans',
+                    status: false
+                },
+                {
+                    name: 'news',
+                    status: false
+                },
+                {
+                    name: 'shop',
+                    status: false
+                },
+            ],
+            }
+        },
+        methods: {
+            activeControl(){
+                
+            }
+        }
     }
 </script>
 
@@ -15,35 +66,9 @@
             <img src="../assets/img/dc-logo.png" alt="Logo">
             <div>
                 <ul class="d-flex gap-4">
-                    <li>
-                        <a href="#" class="text-uppercase active">characters</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-uppercase">comics</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-uppercase">movies</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-uppercase">tv</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-uppercase">games</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-uppercase">collectibles</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-uppercase">videos</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-uppercase">fans</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-uppercase">news</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-uppercase">shop</a>
+                    <li v-for="(element,index) in arrayNavLinks">
+                        <a href="#" class="text-uppercase"
+                        v-bind:class="{'active' : element.status}">{{element.name}}</a>
                     </li>
                 </ul>
             </div>
@@ -80,16 +105,23 @@
                         font-weight: bold;
                         color: #1C1C1C;
                         font-size: 0.9rem;
-                        &:hover{
+                        /* &:hover{
                             border-bottom: 5px solid #0282f9;
                             padding-bottom: 4rem;
-                        }
+                        } */
+                    }
+                    a.active{
+                        color: #0282f9;
+                        border-bottom: 3px solid #0282f9;
+                        padding-bottom: 4rem;
                     }
                    
                 }
             }
         }
     }
+
+    
 
 
 
